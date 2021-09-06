@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.buttons button {
+  font-size: 1em;
+  width: 6rem;
+  height: 4rem;
+}
+
+.buttons button:hover {
+  cursor: pointer;
+}
+
+
+
+
