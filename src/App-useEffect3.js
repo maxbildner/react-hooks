@@ -1,46 +1,38 @@
 import "./App-useEffect.css";
 import React, { useState, useEffect } from "react";
 
-// USE EFFECT HOOK EXAMPLE 1 NOTES
+// USE EFFECT HOOK EXAMPLE 2 NOTES
 // Video Tutorial: ?
 // Hooks and Class Equivalents: https://medium.com/soluto-engineering/react-class-features-vs-hooks-equivalents-745368dafdb3
 // Docs: https://reactjs.org/docs/hooks-intro.html
 
 function App() {
-  const [resourceType, setResourceType] = useState("posts");
+  // window.innerWidth => int pixels interior width of browser window
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+  // note order of console logs on render/window resize: 'a', 'b', 'c', 'a', d', 'b', e' !!
   // console.log('a');
 
-  const [items, setItems] = useState([]);
+  const handleResize = () => {
+    // console.log('d');
+    setWindowWidth(window.innerWidth);
+    // console.log('e');
+  };
 
-  // cb will run everytime App function renders (if no array is passed in)
   useEffect(() => {
-    console.log("render");
+    window.addEventListener("resize", handleResize);
+    // console.log('c');
 
-    fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
-      .then((response) => response.json())
-      .then((data) => setItems(data));
-  }, [resourceType]);
-  // no array   = cb runs everytime any resource updates
-  // []         = componentDidMount  = cb runs once after initial render
-  // [resource] = componentDidUpdate = cb runs after initial render,
-  //              then runs after everytime specified resource changes
+    // callback runs everytime component is "unMounted" or before useEffect runs again (doesn't run for initial 1st run)
+    return () => {
+      console.log("f"); // doesn't show up on window resize, because useEffect only runs once on mount
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   // console.log('b');
 
-  return (
-    <div className="App">
-      <div className="buttons">
-        <button onClick={() => setResourceType("posts")}>Posts</button>
-        <button onClick={() => setResourceType("users")}>Users</button>
-        <button onClick={() => setResourceType("comments")}>Comments</button>
-      </div>
-      <h1>{resourceType}</h1>
-      {items.map((item, i) => (
-        <div key={i}>{JSON.stringify(item)}</div>
-      ))}
-    </div>
-  );
+  return <div className="App">{windowWidth}</div>;
 }
 
 export default App;
@@ -66,3 +58,5 @@ export default App;
 //         - can think of it as "cleanup", so everytime useEffect is run
 //           the cb is run first to "cleanup" the previous code
 //         - good for removing event listeners
+
+// 2) note order of console logs 'a', 'b', 'c', 'a', d', 'b', e' !!!

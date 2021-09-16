@@ -7,26 +7,27 @@ import React, { useState, useEffect } from "react";
 // Docs: https://reactjs.org/docs/hooks-intro.html
 
 function App() {
-  const [resourceType, setResourceType] = useState("posts");
+  // const [resourceType, setResourceType] = useState("posts");
 
-  // console.log('a');
+  const initialState = () => {
+    console.log("a");
+    return "posts";
+  };
 
-  const [items, setItems] = useState([]);
+  const [resourceType, setResourceType] = useState(() => initialState());
 
-  // cb will run everytime App function renders (if no array is passed in)
+  console.log("b");
+
+  // cb will run after initial mount/render, then everytime after resourceType changes
   useEffect(() => {
-    console.log("render");
-
-    fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
-      .then((response) => response.json())
-      .then((data) => setItems(data));
-  }, [resourceType]);
+    console.log("useEffect CB");
+  }, []);
   // no array   = cb runs everytime any resource updates
   // []         = componentDidMount  = cb runs once after initial render
   // [resource] = componentDidUpdate = cb runs after initial render,
   //              then runs after everytime specified resource changes
 
-  // console.log('b');
+  console.log("c");
 
   return (
     <div className="App">
@@ -36,9 +37,6 @@ function App() {
         <button onClick={() => setResourceType("comments")}>Comments</button>
       </div>
       <h1>{resourceType}</h1>
-      {items.map((item, i) => (
-        <div key={i}>{JSON.stringify(item)}</div>
-      ))}
     </div>
   );
 }
@@ -56,10 +54,7 @@ export default App;
 //         []         = componentDidMount  = cb runs once
 //         [resource] = componentDidUpdate = cb runs after initil render,
 //                      then runs after everytime specified resource changes
-//          - if No array passed in, cb runs after EVERYTIME component renders
-//          - if Empty array passed in, cb runs only ONCE after component initially renders
-//          - if Non empty array passed in, cb runs after initial render,
-//            then runs after everytime specified resource changes
+
 //    Returns:
 //    - cb = callback that's called whenever the component "unMounts"
 //         - or runs everytime before the actual setup code
