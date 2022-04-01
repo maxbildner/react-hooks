@@ -1,0 +1,196 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2638
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fnil\fcharset0 HelveticaNeue-Bold;\f2\fnil\fcharset0 HelveticaNeue-Italic;
+}
+{\colortbl;\red255\green255\blue255;\red220\green161\blue13;}
+{\*\expandedcolortbl;;\cssrgb\c89412\c68627\c3922;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid1\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid101\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid201\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid301\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid302\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid303\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li2160\lin2160 }{\listname ;}\listid4}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab560
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\fs26 \cf0 REACT NOTES\
+\
+3/30/22\
+REACT 
+\f1\b \ul USE MEMO 
+\f0\b0 \ulnone HOOK\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls1\ilvl0
+\fs24 \cf0 {\listtext	\uc0\u8259 	}{\field{\*\fldinst{HYPERLINK "https://aheadcreative.co.uk/articles/avoiding-react-component-re-renders-with-react-memo/"}}{\fldrslt 
+\fs26 \cf2 https://aheadcreative.co.uk/articles/avoiding-react-component-re-renders-with-react-memo/}}
+\fs26 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 REACT 
+\f1\b \ul USE CALL BACK 
+\f0\b0 \ulnone HOOK
+\f1\b \ul \
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls2\ilvl0
+\f0\b0\fs24 \cf0 \ulnone {\listtext	\uc0\u8259 	}
+\fs26 Both used to prevent unnecessary re-renders of functional components\
+\ls2\ilvl0
+\fs24 {\listtext	\uc0\u8259 	}{\field{\*\fldinst{HYPERLINK "https://dmitripavlutin.com/dont-overuse-react-usecallback/"}}{\fldrslt 
+\fs26 \cf2 https://dmitripavlutin.com/dont-overuse-react-usecallback/}}
+\fs26 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 \
+React USE CALL BACK with empty array as last argument\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls3\ilvl0
+\fs24 \cf0 {\listtext	\uc0\u8259 	}{\field{\*\fldinst{HYPERLINK "https://stackoverflow.com/questions/55026139/whats-the-difference-between-usecallback-with-an-empty-array-as-inputs-and-u"}}{\fldrslt 
+\fs26 \cf2 https://stackoverflow.com/questions/55026139/whats-the-difference-between-usecallback-with-an-empty-array-as-inputs-and-u}}
+\fs26 \
+\ls3\ilvl0
+\fs24 {\listtext	\uc0\u8259 	}
+\fs26 if the second argument is an empty array, the value will be memoized once and always returned.\
+\ls3\ilvl0
+\fs24 {\listtext	\uc0\u8259 	}
+\fs26 If the second argument is omitted, the value will never be memoized, and the\'a0useCallback\'a0and the\'a0useMemo\'a0doesn't do anything.\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 \
+\
+\
+3/30/22\
+REACT\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl0
+\fs24 \cf0 {\listtext	\uc0\u8259 	}
+\f1\b\fs26 \ul Components will Re-Render
+\f0\b0 \ulnone  if at least one of the following happens:\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl1
+\fs24 \cf0 {\listtext	\uc0\u8259 	}
+\fs26 Parent component re-renders\
+\ls4\ilvl1
+\fs24 {\listtext	\uc0\u8259 	}
+\fs26 Values returned by hooks are changed\
+\ls4\ilvl1
+\fs24 {\listtext	\uc0\u8259 	}
+\fs26 Props (passed down by it\'92s parent component) are changed\
+\ls4\ilvl1
+\fs24 {\listtext	\uc0\u8259 	}
+\fs26 QUESTION:\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl2
+\fs24 \cf0 {\listtext	\uc0\u8259 	}
+\f2\i\fs26 Why is react built like that? (Child components automatically pre-render if parent state changes)
+\f0\i0 \
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl1
+\fs24 \cf0 {\listtext	\uc0\u8259 	}{\field{\*\fldinst{HYPERLINK "https://medium.com/@bhavyasaggi/how-did-i-re-render-performance-and-best-practices-for-react-components-43bb5d85491c"}}{\fldrslt 
+\fs26 \cf2 https://medium.com/@bhavyasaggi/how-did-i-re-render-performance-and-best-practices-for-react-components-43bb5d85491c}}
+\fs26 \
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl0
+\fs24 \cf0 {\listtext	\uc0\u8259 	}
+\fs26 Better to 
+\f1\b \ul split state up instead of into one object
+\f0\b0 \ulnone  (better performance)\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl1
+\fs24 \cf0 {\listtext	\uc0\u8259 	}{\field{\*\fldinst{HYPERLINK "https://www.youtube.com/watch?v=5r4LlVAFrd0"}}{\fldrslt 
+\fs26 \cf2 https://www.youtube.com/watch?v=5r4LlVAFrd0}}
+\fs26 \
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl0
+\fs24 \cf0 {\listtext	\uc0\u8259 	}
+\f1\b\fs26 \ul console.count
+\f0\b0 \ulnone (\'93Re Render Count:\'94)\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl1
+\fs24 \cf0 {\listtext	\uc0\u8259 	}
+\fs26 Logs the number of times a component is rendered\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl0
+\fs24 \cf0 {\listtext	\uc0\u8259 	}
+\fs26 Use more components/split logic up into components!\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl1
+\fs24 \cf0 {\listtext	\uc0\u8259 	}
+\fs26 This can improve performance by preventing unnecessary re-renders of child components \
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl0
+\fs24 \cf0 {\listtext	\uc0\u8259 	}
+\f1\b\fs26 \ul React Profiler
+\f0\b0 \ulnone  Chrome Extension\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl1
+\fs24 \cf0 {\listtext	\uc0\u8259 	}
+\fs26 Go to Profiler > settings icon > \'93highlight updates when components pre-renders\'94\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl2
+\fs24 \cf0 {\listtext	\uc0\u8259 	}
+\fs26 Yellow outline = too many re-renders\
+\ls4\ilvl2
+\fs24 {\listtext	\uc0\u8259 	}
+\fs26 Green outline = not too many re-renders\
+\ls4\ilvl2
+\fs24 {\listtext	\uc0\u8259 	}{\field{\*\fldinst{HYPERLINK "https://www.youtube.com/watch?v=4U37IRrt_zQ"}}{\fldrslt 
+\fs26 \cf2 https://www.youtube.com/watch?v=4U37IRrt_zQ}}
+\fs26 \
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl0
+\fs24 \cf0 {\listtext	\uc0\u8259 	}
+\f1\b\fs26 \ul When is React Slow?
+\f0\b0 \ulnone \
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl1
+\fs24 \cf0 {\listtext	\uc0\u8259 	}
+\fs26 Ex. \ul Rendering large lists\ulnone /forcing it to re-render unnecessarily\
+\ls4\ilvl1
+\fs24 {\listtext	\uc0\u8259 	}
+\fs26 Great video on \ul Measuring React Performance and Fixing\ulnone \
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl2
+\fs24 \cf0 {\listtext	\uc0\u8259 	}{\field{\*\fldinst{HYPERLINK "https://www.youtube.com/watch?v=b8IcYOV5_Rc"}}{\fldrslt 
+\fs26 \cf2 https://www.youtube.com/watch?v=b8IcYOV5_Rc}}
+\fs26 \
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl0
+\fs24 \cf0 {\listtext	\uc0\u8259 	}
+\f1\b\fs26 \ul Using Indexes as Keys in mapping functions Not recommended!!
+\f0\b0 \ulnone \
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl1
+\fs24 \cf0 {\listtext	\uc0\u8259 	}{\field{\*\fldinst{HYPERLINK "https://programmingwithmosh.com/react/why-do-i-need-keys-in-react-lists/#:~:text=React%20recommends%20that%20you%20do,to%20some%20unstable%20component%20behaviour"}}{\fldrslt 
+\fs26 \cf2 https://programmingwithmosh.com/react/why-do-i-need-keys-in-react-lists/#:~:text=React%20recommends%20that%20you%20do,to%20some%20unstable%20component%20behaviour}}
+\fs26 \
+\ls4\ilvl1
+\fs24 {\listtext	\uc0\u8259 	}
+\fs26 Only acceptable in some situations (when items in mapping are not being moved order or deleted)\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl2
+\fs24 \cf0 {\listtext	\uc0\u8259 	}
+\fs26 React could use old index as key when re-rendering (which could cause orders to be mixed up)\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl1
+\fs24 \cf0 {\listtext	\uc0\u8259 	}
+\f1\b\fs26 \ul Use unique id\'92s instead!!!\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl0
+\f0\b0\fs24 \cf0 \ulnone {\listtext	\uc0\u8259 	}
+\fs26 DON\'92T Set Initial State of Child Component a value that\'92s passed from props/parent component!\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl1
+\fs24 \cf0 {\listtext	\uc0\u8259 	}{\field{\*\fldinst{HYPERLINK "https://stackoverflow.com/questions/28785106/reactjs-why-is-passing-the-component-initial-state-a-prop-an-anti-pattern"}}{\fldrslt 
+\fs26 \cf2 https://stackoverflow.com/questions/28785106/reactjs-why-is-passing-the-component-initial-state-a-prop-an-anti-pattern}}
+\fs26 \
+\pard\tx720\pardeftab560\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 3/10/22\
+1) 
+\f1\b \ul React - Reference Hooks
+\f0\b0 \ulnone  and 
+\f1\b \ul Input Components
+\f0\b0 \ulnone  disguised as Buttons\
+\pard\pardeftab560\slleading20\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://medium.com/web-dev-survey-from-kyoto/how-to-customize-the-file-upload-button-in-react-b3866a5973d8"}}{\fldrslt \cf2 https://medium.com/web-dev-survey-from-kyoto/how-to-customize-the-file-upload-button-in-react-b3866a5973d8}}\
+\
+}
